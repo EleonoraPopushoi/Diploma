@@ -4,9 +4,9 @@
 
 ### Документация проекта 
 
-* [План по автоматизации тестирования](http://https://github.com/EleonoraPopushoi/Diploma/blob/master/Plan.md)
-* Отчет по итогам автоматизированного тестирования
-* Отчет по итогам автоматизации
+* [План по автоматизации тестирования](https://github.com/EleonoraPopushoi/Diploma/blob/master/Plan.md)
+* [Отчет по итогам автоматизированного тестирования](https://github.com/EleonoraPopushoi/Diploma/blob/master/Report.md)
+* [Отчет по итогам автоматизации](https://github.com/EleonoraPopushoi/Diploma/blob/master/Summary.md)
 
 #### Используемое окружение: 
 
@@ -22,7 +22,7 @@
 1. Склонируйте репозиторий;
    
 1. Запустите контейнер, с предоствыленной базой данных (БД) `docker-compose up -d --force-recreate`
-
+1. Запускается симулятор командой `npm start` на порту 9999.
 1. Убедитесь в том, что БД готова к работе (логи можно смотреть через `docker-compose logs -f <applicationName>` (mysql или postgres)
 
 1. Запустите приложение командой :
