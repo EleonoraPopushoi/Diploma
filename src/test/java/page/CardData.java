@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import data.DataHelper;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class CardData {
@@ -27,11 +29,11 @@ public class CardData {
     }
 
     public void checkIfPaymentSuccessful() {
-        successNotification.waitUntil(Condition.visible, 15000);
+        successNotification.should(Condition.visible, Duration.ofSeconds(15));
     }
 
     public void checkIfPaymentNotSuccessful() {
-        errorNotification.waitUntil(Condition.visible, 15000);
+        errorNotification.should(Condition.visible, Duration.ofSeconds(15));
     }
 
     public void checkIfWrongFormatOfField() {
