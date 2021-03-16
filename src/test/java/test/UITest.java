@@ -4,15 +4,14 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import data.DataHelper;
 import data.SqlUtils;
 import io.qameta.allure.selenide.AllureSelenide;
+import lombok.SneakyThrows;
 import lombok.val;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import page.CardData;
 import page.TripPage;
-import data.SqlUtils;
-
-import java.sql.SQLException;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -37,7 +36,8 @@ public class UITest {
     }
 
     @Test
-    void shouldSuccessWithValidDebitCard() throws SQLException {
+    @SneakyThrows
+    void shouldSuccessWithValidDebitCard() {
         val tripPage = new TripPage();
         val CardData = tripPage.selectBuyByDebitCard();
         val validCardInformation = DataHelper.getValidCardInformation();
@@ -52,7 +52,8 @@ public class UITest {
     }
 
     @Test
-    void shouldSuccessWithValidCreditCard() throws SQLException {
+    @SneakyThrows
+    void shouldSuccessWithValidCreditCard() {
         val tripPage = new TripPage();
         val CardData = tripPage.selectBuyByCreditCard();
         val validCardInformation = DataHelper.getValidCardInformation();
@@ -64,7 +65,8 @@ public class UITest {
     }
 
     @Test
-    void shouldNotSuccessWithInvalidDebitCard() throws SQLException {
+    @SneakyThrows
+    void shouldNotSuccessWithInvalidDebitCard() {
         val tripPage = new TripPage();
         val CardData = tripPage.selectBuyByDebitCard();
         val invalidCardInformation = DataHelper.getInvalidCardInformation();
@@ -76,7 +78,8 @@ public class UITest {
     }
 
     @Test
-    void shouldNotSuccessWithInvalidCreditCard() throws SQLException {
+    @SneakyThrows
+    void shouldNotSuccessWithInvalidCreditCard() {
         val tripPage = new TripPage();
         val CardData = tripPage.selectBuyByCreditCard();
         val validCardInformation = DataHelper.getInvalidCardInformation();
@@ -90,96 +93,96 @@ public class UITest {
     @Test
     void shouldNotSuccessWithWrongCardNumber() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongLongCardNumber();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfWrongFormatOfField();
-        val CardData2 = tripPage.selectBuyByDebitCard();
-        CardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData2.checkIfWrongFormatOfField();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfWrongFormatOfField();
+        val cardData2 = tripPage.selectBuyByDebitCard();
+        cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData2.checkIfWrongFormatOfField();
     }
 
     @Test
     void shouldNotSuccessWithShortestCardNumber() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithShortestCardNumber();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfWrongFormatOfField();
-        val CardData2 = tripPage.selectBuyByDebitCard();
-        CardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData2.checkIfWrongFormatOfField();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfWrongFormatOfField();
+        val cardData2 = tripPage.selectBuyByDebitCard();
+        cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData2.checkIfWrongFormatOfField();
     }
 
     @Test
     void shouldNotSuccessWithWrongMonth() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongMonth();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfWrongFormatOfField();
-        val CardData2 = tripPage.selectBuyByDebitCard();
-        CardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData2.checkIfWrongFormatOfField();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfWrongFormatOfField();
+        val cardData2 = tripPage.selectBuyByDebitCard();
+        cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData2.checkIfWrongFormatOfField();
     }
 
     @Test
     void shouldNotSuccessWithWrongYear() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongYear();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfWrongFormatOfField();
-        val CardData2 = tripPage.selectBuyByDebitCard();
-        CardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData2.checkIfWrongFormatOfField();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfWrongFormatOfField();
+        val cardData2 = tripPage.selectBuyByDebitCard();
+        cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData2.checkIfWrongFormatOfField();
     }
 
     @Test
     void shouldNotSuccessWithWrongYearFromOneNumber() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongYearWithOneNumber();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfWrongFormatOfField();
-        val CardData2 = tripPage.selectBuyByDebitCard();
-        CardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData2.checkIfWrongFormatOfField();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfWrongFormatOfField();
+        val cardData2 = tripPage.selectBuyByDebitCard();
+        cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData2.checkIfWrongFormatOfField();
     }
 
     @Test
     void shouldNotSuccessWithWrongCVC() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongCvc();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfWrongFormatOfField();
-        val CardData2 = tripPage.selectBuyByDebitCard();
-        CardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData2.checkIfWrongFormatOfField();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfWrongFormatOfField();
+        val cardData2 = tripPage.selectBuyByDebitCard();
+        cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData2.checkIfWrongFormatOfField();
     }
 
     @Test
     void shouldNotSuccessWithWrongName() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithWrongHolderName();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfWrongFormatOfField();
-        val CardData2 = tripPage.selectBuyByDebitCard();
-        CardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData2.checkIfWrongFormatOfField();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfWrongFormatOfField();
+        val cardData2 = tripPage.selectBuyByDebitCard();
+        cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData2.checkIfWrongFormatOfField();
     }
 
     @Test
     void shouldNotSuccessWithoutName() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val invalidCardInformation = DataHelper.getCardInformationWithoutName();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfWrongFormatOfField();
-        val CardData2 = tripPage.selectBuyByDebitCard();
-        CardData2.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData2.checkIfWrongFormatOfField();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfWrongFormatOfField();
+        val cardData2 = tripPage.selectBuyByDebitCard();
+        cardData2.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData2.checkIfWrongFormatOfField();
     }
 }
