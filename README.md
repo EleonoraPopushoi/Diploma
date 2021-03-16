@@ -4,9 +4,9 @@
 
 ### Документация проекта 
 
-* [План по автоматизации тестирования](https://github.com/EleonoraPopushoi/Diploma/blob/master/Plan.md)
-* [Отчет по итогам автоматизированного тестирования](https://github.com/EleonoraPopushoi/Diploma/blob/master/Report.md)
-* [Отчет по итогам автоматизации](https://github.com/EleonoraPopushoi/Diploma/blob/master/Summary.md)
+* [План по автоматизации тестирования](https://https://github.com/EleonoraPopushoi/Diploma/blob/master/Reports%20and%20Plan/Plan.md)
+* [Отчет по итогам автоматизированного тестирования](https://https://github.com/EleonoraPopushoi/Diploma/blob/master/Reports%20and%20Plan/Report.md)
+* [Отчет по итогам автоматизации](https://https://github.com/EleonoraPopushoi/Diploma/blob/master/Reports%20and%20Plan/Summary.md)
 
 #### Используемое окружение: 
 
