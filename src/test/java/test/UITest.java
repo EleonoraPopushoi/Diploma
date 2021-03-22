@@ -39,10 +39,10 @@ public class UITest {
     @SneakyThrows
     void shouldSuccessWithValidDebitCard() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByDebitCard();
+        val cardData = tripPage.selectBuyByDebitCard();
         val validCardInformation = DataHelper.getValidCardInformation();
-        CardData.fillCardInformationForSelectedWay(validCardInformation);
-        CardData.checkIfPaymentSuccessful();
+        cardData.fillCardInformationForSelectedWay(validCardInformation);
+        cardData.checkIfPaymentSuccessful();
         val paymentId = SqlUtils.getPaymentId();
         val statusForPaymentByDebitCard = SqlUtils.getStatusForPaymentByDebitCard(paymentId);
         val paymentAmount = SqlUtils.getPaymentAmount(paymentId);
@@ -55,10 +55,10 @@ public class UITest {
     @SneakyThrows
     void shouldSuccessWithValidCreditCard() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val validCardInformation = DataHelper.getValidCardInformation();
-        CardData.fillCardInformationForSelectedWay(validCardInformation);
-        CardData.checkIfPaymentSuccessful();
+        cardData.fillCardInformationForSelectedWay(validCardInformation);
+        cardData.checkIfPaymentSuccessful();
         val paymentId = SqlUtils.getPaymentId();
         val statusForPaymentByCreditCard = SqlUtils.getStatusForPaymentByCreditCard(paymentId);
         assertEquals("APPROVED", statusForPaymentByCreditCard);
@@ -68,10 +68,10 @@ public class UITest {
     @SneakyThrows
     void shouldNotSuccessWithInvalidDebitCard() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByDebitCard();
+        val cardData = tripPage.selectBuyByDebitCard();
         val invalidCardInformation = DataHelper.getInvalidCardInformation();
-        CardData.fillCardInformationForSelectedWay(invalidCardInformation);
-        CardData.checkIfPaymentNotSuccessful();
+        cardData.fillCardInformationForSelectedWay(invalidCardInformation);
+        cardData.checkIfPaymentNotSuccessful();
         val paymentId = SqlUtils.getPaymentId();
         val statusForPaymentByDebitCard = SqlUtils.getStatusForPaymentByDebitCard(paymentId);
         assertThat(statusForPaymentByDebitCard, equalTo("DECLINED"));
@@ -81,10 +81,10 @@ public class UITest {
     @SneakyThrows
     void shouldNotSuccessWithInvalidCreditCard() {
         val tripPage = new TripPage();
-        val CardData = tripPage.selectBuyByCreditCard();
+        val cardData = tripPage.selectBuyByCreditCard();
         val validCardInformation = DataHelper.getInvalidCardInformation();
-        CardData.fillCardInformationForSelectedWay(validCardInformation);
-        CardData.checkIfPaymentNotSuccessful();
+        cardData.fillCardInformationForSelectedWay(validCardInformation);
+        cardData.checkIfPaymentNotSuccessful();
         val paymentId = SqlUtils.getPaymentId();
         val statusForPaymentByCreditCard = SqlUtils.getStatusForPaymentByCreditCard(paymentId);
         assertThat(statusForPaymentByCreditCard, equalTo("DECLINED"));
