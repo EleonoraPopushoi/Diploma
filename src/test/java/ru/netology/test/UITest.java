@@ -1,4 +1,4 @@
-package test;
+package ru.netology.test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import ru.netology.data.DataHelper;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import page.TripPage;
+import ru.netology.page.TripPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.hamcrest.MatcherAssert.assertThat;
