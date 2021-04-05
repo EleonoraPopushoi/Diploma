@@ -1,9 +1,9 @@
-package test;
+package ru.netology.test;
 
 import ru.netology.data.DataHelper;
 import lombok.val;
 import org.junit.jupiter.api.Test;
-import rest.RestApiHelper;
+import ru.netology.rest.RestApiHelper;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
