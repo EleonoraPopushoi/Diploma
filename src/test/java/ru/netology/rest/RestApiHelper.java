@@ -1,4 +1,4 @@
-package rest;
+package ru.netology.rest;
 
 import ru.netology.data.DataHelper;
 import io.restassured.builder.RequestSpecBuilder;
