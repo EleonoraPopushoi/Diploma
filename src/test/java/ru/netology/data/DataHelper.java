@@ -62,4 +62,9 @@ public class DataHelper {
         return new CardInformation("4444 4444 4444 4441", "22", "11", " ", correctCVC);
     }
 
+    @Value
+    public static class CardInformation {
+        private String number, year, month, holder, cvc;
+    }
+
 }
