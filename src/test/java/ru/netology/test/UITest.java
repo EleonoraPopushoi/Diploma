@@ -1,8 +1,8 @@
 package test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import data.DataHelper;
-import data.SqlUtils;
+import ru.netology.data.DataHelper;
+import ru.netology.data.SqlUtils;
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.SneakyThrows;
 import lombok.val;
@@ -10,7 +10,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import page.CardData;
 import page.TripPage;
 
 import static com.codeborne.selenide.Selenide.open;

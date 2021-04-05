@@ -1,6 +1,6 @@
 package rest;
 
-import data.DataHelper;
+import ru.netology.data.DataHelper;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;

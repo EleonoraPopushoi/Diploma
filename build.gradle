@@ -5,11 +5,11 @@ plugins {
 }
 
 allure {
+    version = '2.13.7'
     autoconfigure = true
-    version = '2.13.3'
 
     useJUnit5 {
-        version = '2.13.3'
+        version = '2.13.7'
     }
 }
 
@@ -36,7 +36,7 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest-library:2.2'
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
-    testImplementation 'io.qameta.allure:allure-selenide:2.13.3'
+    testImplementation 'io.qameta.allure:allure-selenide:2.13.7'
     testCompile 'ch.qos.logback:logback-classic:1.2.3'
 }
 

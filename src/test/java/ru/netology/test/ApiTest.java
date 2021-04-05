@@ -1,6 +1,6 @@
 package test;
 
-import data.DataHelper;
+import ru.netology.data.DataHelper;
 import lombok.val;
 import org.junit.jupiter.api.Test;
 import rest.RestApiHelper;
